@@ -14,6 +14,7 @@ RUN set -eux; \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
+    unzip \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
