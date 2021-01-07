@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-buster
+FROM php:7.4-apache-buster
 
 RUN set -eux; \
   apt-get update && apt-get dist-upgrade -y
@@ -15,6 +15,7 @@ RUN set -eux; \
     libjpeg62-turbo-dev \
     libpng-dev \
     unzip \
+    nginx \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
@@ -54,4 +55,9 @@ RUN cd /tmp \
 
 RUN chown -R www-data: /var/www/html
 
-EXPOSE 80 443
+EXPOSE 80
+
+# Apache mods to enable
+RUN a2enmod rewrite
+
+ENTRYPOINT ["apache2-foreground"]
