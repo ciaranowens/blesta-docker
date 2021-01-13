@@ -47,9 +47,9 @@ RUN cd /tmp \
 
 # Blesta File Install
 RUN cd /tmp \
-    && curl -s -O https://account.blesta.com/client/plugin/download_manager/client_main/download/169/blesta-4.12.3.zip \
-    && unzip -qq blesta-4.12.3.zip \
-    && rm blesta-4.12.3.zip \
+    && curl -s -O https://account.blesta.com/client/plugin/download_manager/client_main/download/172/blesta-5.0.0.zip\
+    && unzip -qq blesta-5.0.0.zip \
+    && rm blesta-5.0.0.zip \
     && mv uploads /var/www \
     && mv blesta/* blesta/.h* /var/www/html
 
