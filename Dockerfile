@@ -54,8 +54,10 @@ RUN cd /tmp \
     && mv blesta/* blesta/.h* /var/www/html
 
 RUN chown -R www-data: /var/www/html
+RUN chown -R www-data:www-data /var/www/uploads
 
 EXPOSE 80
+EXPOSE 443
 
 # Apache mods to enable
 RUN a2enmod rewrite
